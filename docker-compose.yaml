@@ -1,0 +1,26 @@
+services:
+
+#  db:
+#    container_name: database_mysql
+#    build:
+#      context: "./"
+#      dockerfile: "DockerFileDB"
+#    environment:
+#      - SA_PASSWORD=Pass@word
+#      - ACCEPT_EULA=Y
+#      - MSSQL_DB=parkcollab
+#    ports:
+#      - "1433:1433"
+
+
+  db:
+    image: mysql:8.0
+    container_name: database_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: default
+      MYSQL_PASSWORD: default@123
+      MYSQL_DATABASE: freshOrder
+    ports:
+      - "5500:3306"
